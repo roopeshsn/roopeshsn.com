@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from 'mdsvex'
 
@@ -19,11 +19,10 @@ const config = {
 		adapter: adapter({
 			// default options are shown. On some platforms
 			// these options are set automatically — see below
-			pages: 'build',
-			assets: 'build',
-			fallback: undefined,
-			precompress: false,
-			strict: true
+			routes: {
+				include: ['/*'],
+				exclude: ['<all>']
+			}
 		})
 	},
 	extensions: ['.svelte', '.md'],
