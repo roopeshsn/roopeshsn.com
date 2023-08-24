@@ -3,7 +3,7 @@ title: The Decorator Design Pattern
 createdAt: 23-08-2023
 category: python
 summary: A deep dive into the decorator design pattern
-tags: python
+tags: design patterns, python
 author: Roopesh Saravanan
 ---
 
