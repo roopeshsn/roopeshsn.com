@@ -109,4 +109,13 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="mt-8">
+		Download a copy of my resume from <a
+			href="https://drive.google.com/file/d/1hlbT1WZnP7QUBHPMveSwCoK3dFWuRqJC/view?usp=sharing"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="text-blue-900 underline">here</a
+		>.
+	</div>
 </div>

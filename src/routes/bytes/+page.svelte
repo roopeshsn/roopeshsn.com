@@ -6,7 +6,12 @@
 <div class="mt-8">
 	<h1 class="text-xl md:text-2xl">Bytes</h1>
 	<p class="text-gray-600">
-		Bytes are a shorter form of a blog post that is not boring, clear, and concise.
+		Bytes are a shorter form of a blog post that is not boring, clear, and concise. Also I write on <a
+			href="https://roopesh.hashnode.dev/"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="text-blue-900 underline">Hashnode</a
+		>.
 	</p>
 	<ul class="mt-4">
 		{#each data.res as byte}
