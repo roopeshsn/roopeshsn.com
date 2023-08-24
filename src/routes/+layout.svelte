@@ -6,6 +6,8 @@
 
 <div class="container mx-auto px-4 sm:px-0">
 	<Header />
-	<slot />
+	<main>
+		<slot />
+	</main>
 	<Footer />
 </div>

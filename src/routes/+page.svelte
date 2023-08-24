@@ -1,5 +1,5 @@
 <script>
-	export const bytes = [
+	const bytes = [
 		{
 			title: 'What I learned doing GSoC?',
 			createdAt: 'Sun Mar 20 2022 14:43:50 GMT+0530 (India Standard Time)',
@@ -15,6 +15,8 @@
 			path: 'bytes/quotes-app'
 		}
 	];
+	export let data;
+	export const recentBytes = data.res.slice(0, 3);
 </script>
 
 <div>
@@ -32,17 +34,20 @@
 		</div>
 	</div>
 
-	<ul class="mt-4">
-		{#each bytes as byte}
-			<li class="px-4 py-4 mb-2 rounded-md border-2 border-gray-200 border-solid hover:shadow">
-				<header class="text-xl">
-					<a href={byte.path}>
-						{byte.title}
-					</a>
-				</header>
-				<p>{byte.summary}</p>
-				<footer>Published {byte.createdAt}</footer>
-			</li>
-		{/each}
-	</ul>
+	<div class="mt-8">
+		<h2 class="text-md md:text-lg">Recent Bytes</h2>
+		<ul class="mt-4">
+			{#each recentBytes as byte}
+				<li class="px-4 py-4 mb-2 rounded-md border-2 border-gray-200 border-solid hover:shadow">
+					<header class="text-xl">
+						<a href={byte.path}>
+							{byte.meta.title}
+						</a>
+					</header>
+					<p>{byte.meta.summary}</p>
+					<footer>Published {byte.meta.createdAt}</footer>
+				</li>
+			{/each}
+		</ul>
+	</div>
 </div>
