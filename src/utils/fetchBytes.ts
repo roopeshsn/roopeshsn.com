@@ -1,3 +1,5 @@
+import { sortDate } from "./sortDate";
+
 export const fetchBytes = async (): Promise<Array<{
     meta: Record<string, any>,
     path: string,
@@ -17,6 +19,8 @@ export const fetchBytes = async (): Promise<Array<{
         };
       })
     );
-  
+
+    allPosts.sort(sortDate)
+    allPosts.forEach(byte => byte.meta.createdAt = new Date(byte.meta.createdAt).toDateString())
     return allPosts;
 };

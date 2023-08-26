@@ -1,6 +1,6 @@
 ---
 title: The Decorator Design Pattern
-createdAt: 23-08-2023
+createdAt: 2023-08-23
 category: python
 summary: A deep dive into the decorator design pattern
 tags: design patterns, python

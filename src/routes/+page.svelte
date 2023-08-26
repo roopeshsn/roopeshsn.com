@@ -27,13 +27,30 @@
 			<p>
 				Hi! My name is Roopesh Saravanan. I am a recent graduate in electrical and electronics
 				engineering. I am passionate about hardware and software engineering, particularly embedded
-				systems, networking, cloud computing, the web, and LLMs.
+				systems, networking, cloud computing, the web, and LLMs. Find me on <a
+					href="https://github.com/roopeshsn"
+					class="text-blue-900 underline"
+					target="_blank"
+					rel="noopener noreferrer">GitHub</a
+				>,
+				<a
+					href="https://linkedin.com/in/roopeshsn"
+					class="text-blue-900 underline"
+					target="_blank"
+					rel="noopener noreferrer">LinkedIn</a
+				>, and
+				<a
+					href="https://twitter.com/roopeshsn"
+					class="text-blue-900 underline"
+					target="_blank"
+					rel="noopener noreferrer">Twitter</a
+				>.
 			</p>
 		</div>
 	</div>
 
 	<div class="mt-8">
-		<h2 class="text-md md:text-lg">Recent Bytes</h2>
+		<h2 class="text-xl md:text-xl">Recent Bytes</h2>
 		<p class="text-gray-600">
 			Bytes are a shorter form of a blog post that is not boring, clear, and concise.
 		</p>

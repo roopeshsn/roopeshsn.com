@@ -4,7 +4,6 @@ export async function load({ params }: { params: { slug: string } }) {
   let formattedTags = tags.split(',').map(tag => tag.trim())
   const content = post.default;
   
-  console.log(formattedTags)
   return {
     title,
     createdAt,
