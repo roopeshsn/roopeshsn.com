@@ -24,6 +24,21 @@
 	<title>roopeshsn.com</title>
 	<meta name="description" content="Roopesh Saravanan's portfolio and blog" />
 	<meta name="keywords" content="roopeshsn, roopesh saravanan, roopesh, portfolio, blog, bytes" />
+
+	<!-- Facebook Meta Tags -->
+	<meta property="og:url" content="https://roopeshsn.com" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="roopeshsn.com" />
+	<meta property="og:description" content="Roopesh Saravanan's portfolio and blog" />
+	<meta property="og:image" content="" />
+
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="twitter:domain" content="roopeshsn.com" />
+	<meta property="twitter:url" content="https://roopeshsn.com" />
+	<meta name="twitter:title" content="roopeshsn.com" />
+	<meta name="twitter:description" content="Roopesh Saravanan's portfolio and blog" />
+	<meta name="twitter:image" content="" />
 </svelte:head>
 
 <div>

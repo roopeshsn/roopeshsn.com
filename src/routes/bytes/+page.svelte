@@ -10,6 +10,27 @@
 		content="Bytes are a shorter form of a blog post that is not boring, clear, and concise."
 	/>
 	<meta name="keywords" content="bytes" />
+
+	<!-- Facebook Meta Tags -->
+	<meta property="og:url" content="https://roopeshsn.com/bytes" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Bytes" />
+	<meta
+		property="og:description"
+		content="Bytes are a shorter form of a blog post that is not boring, clear, and concise."
+	/>
+	<meta property="og:image" content="" />
+
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="twitter:domain" content="roopeshsn.com" />
+	<meta property="twitter:url" content="https://roopeshsn.com/bytes" />
+	<meta name="twitter:title" content="Bytes" />
+	<meta
+		name="twitter:description"
+		content="Bytes are a shorter form of a blog post that is not boring, clear, and concise."
+	/>
+	<meta name="twitter:image" content="" />
 </svelte:head>
 
 <div class="mt-8">

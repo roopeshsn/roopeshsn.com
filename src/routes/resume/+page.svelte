@@ -2,6 +2,21 @@
 	<title>Resume</title>
 	<meta name="description" content="Roopesh Saravanan's Resume" />
 	<meta name="keywords" content="resume, cv" />
+
+	<!-- Facebook Meta Tags -->
+	<meta property="og:url" content="https://roopeshsn.com/resume" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Resume" />
+	<meta property="og:description" content="Roopesh Saravanan's Resume" />
+	<meta property="og:image" content="" />
+
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="twitter:domain" content="roopeshsn.com" />
+	<meta property="twitter:url" content="https://roopeshsn.com/resume" />
+	<meta name="twitter:title" content="Resume" />
+	<meta name="twitter:description" content="Roopesh Saravanan's Resume" />
+	<meta name="twitter:image" content="" />
 </svelte:head>
 
 <div class="mt-8">
