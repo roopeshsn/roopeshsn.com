@@ -1,3 +1,9 @@
+<svelte:head>
+	<title>Resume</title>
+	<meta name="description" content="Roopesh Saravanan's Resume" />
+	<meta name="keywords" content="resume, cv" />
+</svelte:head>
+
 <div class="mt-8">
 	<h1 class="text-xl md:text-2xl font-medium mb-4">Roopesh Saravanan</h1>
 

@@ -20,6 +20,12 @@
 	export const recentBytes = data.res.slice(0, 3);
 </script>
 
+<svelte:head>
+	<title>roopeshsn.com</title>
+	<meta name="description" content="Roopesh Saravanan's portfolio and blog" />
+	<meta name="keywords" content="roopeshsn, roopesh saravanan, roopesh, portfolio, blog, bytes" />
+</svelte:head>
+
 <div>
 	<div class="mt-8">
 		<h1 class="text-xl md:text-2xl">Welcome to one of my leased spaces on the Internet!</h1>

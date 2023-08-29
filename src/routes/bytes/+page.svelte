@@ -3,6 +3,15 @@
 	export let data;
 </script>
 
+<svelte:head>
+	<title>Bytes</title>
+	<meta
+		name="description"
+		content="Bytes are a shorter form of a blog post that is not boring, clear, and concise."
+	/>
+	<meta name="keywords" content="bytes" />
+</svelte:head>
+
 <div class="mt-8">
 	<h1 class="text-xl md:text-2xl">Bytes</h1>
 	<p class="text-gray-600">
