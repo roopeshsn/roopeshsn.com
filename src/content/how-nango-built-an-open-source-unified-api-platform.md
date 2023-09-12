@@ -1,6 +1,6 @@
 ---
 title: How Nango built an open source unified API platform?
-createdAt: 2023-09-08
+createdAt: 2023-09-12
 category: python
 summary: Why there's a need for a unified API platform?
 tags: Nango, API
@@ -30,7 +30,7 @@ nango.auth('github', '<user-id>');
 
 ## How did Nango build one?
 
-In simple words as said before, Nango server acts as a middleman which will take care of authorization and also fetching data (which is explained in the sync section). I don't want to create another Nango documentation because they have a better one. Instead, I would like to explain by digging into Nango's codebase.
+In simple words as said before, Nango server acts as a middleman which will take care of authorization and also fetching data (which is explained in the sync section). I don't want to create another [Nango documentation](https://docs.nango.dev/introduction) because they have a better one. Instead, I would like to explain by digging into [Nango's codebase](https://github.com/nangoHQ/nango).
 
 ![Nango block diagram](/images/nango/nango-block-diagram.png)
 
