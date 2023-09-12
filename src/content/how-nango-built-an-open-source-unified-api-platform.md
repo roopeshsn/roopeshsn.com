@@ -1,7 +1,7 @@
 ---
 title: How Nango built an open source unified API platform?
 createdAt: 2023-09-12
-category: python
+category: API
 summary: Why there's a need for a unified API platform?
 tags: Nango, API
 author: Roopesh Saravanan
