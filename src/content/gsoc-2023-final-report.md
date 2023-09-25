@@ -54,11 +54,11 @@ Similarly, the data can be visualized specifically for other pages (country, IXP
 
 ## What's left to do?
 
-The milestones mentioned in the proposal have been completed, except for documentation. That, too, will be completed in the following days.
+The milestones mentioned in the proposal have been completed, except there is work left to do in documentation. That, too, will be completed ASAP.
 
-## The Code
+## What code got merged?
 
-My work is in a dedication branch named [iyp-integration](https://github.com/InternetHealthReport/ihr-website/tree/iyp-integration) and it will get merged in a few days.
+My work is in a dedicated branch named [iyp-integration](https://github.com/InternetHealthReport/ihr-website/tree/iyp-integration) and it will get merged in a few days. Also, you can view a list of [PRs](https://github.com/InternetHealthReport/ihr-website/pulls?q=is%3Apr+is%3Aclosed+project%3Ainternethealthreport%2F8+author%3Aroopeshsn) I've done.
 
 ## Final thoughts
 
