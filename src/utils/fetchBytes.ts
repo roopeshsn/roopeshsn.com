@@ -1,6 +1,6 @@
-import { sortDate } from "./sortDate";
+import sortDate from "./sortDate";
 
-export const fetchBytes = async (): Promise<Array<{
+const fetchBytes = async (): Promise<Array<{
     meta: Record<string, any>,
     path: string,
   }>> => {
@@ -9,7 +9,7 @@ export const fetchBytes = async (): Promise<Array<{
   
     const allPosts = await Promise.all(
       iterablePostFiles.map(async ([path, resolver]) => {
-        const module = await resolver();
+        const module: any = await resolver();
         const metaData = module.metadata;
         const pathArray = path.split('/');
         const postPath = 'bytes/' + pathArray.pop();
@@ -24,3 +24,5 @@ export const fetchBytes = async (): Promise<Array<{
     allPosts.forEach(byte => byte.meta.createdAt = new Date(byte.meta.createdAt).toDateString())
     return allPosts;
 };
+
+export default fetchBytes;

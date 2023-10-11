@@ -1,17 +1,10 @@
-type meta = {
-    title: string,
-    createdAt: string,
-    summary: string,
-    tags: Array<string>,
-    author: string,
-    content: string,
-}
-
-type byte = {
-    meta: meta,
+type Byte = {
+    meta: Record<string, any>,
     path: string
 }
 
-export const sortDate = (a: byte, b: byte): number => {
+const sortDate = (a: Byte, b: Byte): number => {
     return new Date(b.meta.createdAt) - new Date(a.meta.createdAt)
 }
+
+export default sortDate
