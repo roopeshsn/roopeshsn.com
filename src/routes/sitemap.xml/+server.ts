@@ -51,7 +51,7 @@ const xml = (bytes: Byte[]) => {
             .map(
               (byte) => `<url>
                 <loc>${website}/${byte.path}</loc>
-                <lastmod>${new Date(byte.meta.createdAt).toUTCString()}</lastmod>
+                <lastmod>${new Date(byte.meta.createdAt).toISOString()}</lastmod>
                 <changefreq>monthly</changefreq>
                 <priority>1.0</priority>
               </url>`
