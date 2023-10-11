@@ -1,4 +1,7 @@
 <footer class="flex justify-between text-sm py-4 mt-8 text-gray-500">
-	<span>Copyright 2023 roopeshsn.com</span>
-	<span><a href="/rss.xml">RSS Feed</a></span>
+	<div>Copyright 2023 <a href="/" class="hover:underline">roopeshsn.com</a></div>
+	<div>
+		<span class="mr-2"><a href="/rss.xml" class="hover:underline">RSS Feed</a></span>
+		<span><a href="/sitemap.xml" class="hover:underline">Sitemap</a></span>
+	</div>
 </footer>
