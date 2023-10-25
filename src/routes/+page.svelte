@@ -75,7 +75,7 @@
 		<p class="text-gray-600">
 			Bytes are a shorter form of a blog post that is not boring, clear, and concise.
 		</p>
-		<ul class="mt-4">
+		<ul class="my-4">
 			{#each recentBytes as byte}
 				<li class="px-4 py-4 mb-2 rounded-md border-2 border-gray-200 border-solid hover:shadow">
 					<Byte
@@ -87,5 +87,8 @@
 				</li>
 			{/each}
 		</ul>
+		<div class="flex justify-end items-center">
+			<a class="text-gray-600 text-sm hover:underline" href="/bytes">More...</a>
+		</div>
 	</div>
 </div>

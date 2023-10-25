@@ -1,9 +1,10 @@
 ---
 title: Decorators in Python
 createdAt: 2023-08-26
+updatedAt: 2023-10-25
 category: python
 summary: What's the need for decorators in Python?
-tags: python
+tags: decorators, python, decorators in python
 author: Roopesh Saravanan
 ---
 
@@ -104,4 +105,52 @@ print(calculate_factorial(5))
 
 ## Class Decorators
 
-WIP
+The concept we saw so far will apply to class decorators too, but the catch is extending the behaviour of classes instead of functions. I have a class named `User` that will have a constructor to initialize the variable `name`,
+
+```
+class User:
+    def __init__(self, name):
+        self.name = name
+```
+
+Say I need to log a message whenever a new user is created. The simplest solution is to add a `print` statement inside the constructor so that whenever an object is created, the constructor is called, which will initialize a variable `name` and print the message:
+
+```
+class User:
+    def __init__(self, name):
+        self.name = name
+        print(f"[User] {self.name} is created!")
+```
+
+But we are going to get the same result in the decorator way:
+
+```
+def logger(cls):
+    def log(self, message):
+        print(f"[{cls.__name__}] {message}")
+
+    cls.log = log
+    return cls
+
+```
+
+A function named `logger` will dynamically add a method named `log` to the class that is passed to the logger function (in this case, `User`). Here's the complete code:
+
+```
+def logger(cls):
+    def log(self, message):
+        print(f"[{cls.__name__}] {message}")
+
+    cls.log = log
+    return cls
+
+@logger
+class User:
+    def __init__(self, name):
+        self.name = name
+        self.log(f"{self.name} is created!")
+
+customer = User("Roopesh")
+```
+
+In the above code snippet, the logger function (decorator) is applied to the class `User`. When the `User` class is defined, the decorator is called with `cls` referring to the `User` class.
