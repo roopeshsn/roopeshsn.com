@@ -46,9 +46,9 @@
 		<h1 class="text-xl md:text-2xl">Welcome to one of my leased spaces on the Internet!</h1>
 		<div class="mt-4">
 			<p>
-				Hi! My name is Roopesh Saravanan. I am a recent graduate in electrical and electronics
-				engineering. I am passionate about hardware and software engineering, particularly embedded
-				systems, networking, cloud computing, the web, and LLMs. Find me on <a
+				Hi! My name is Roopesh Saravanan. I work as a network consulting engineer at Cisco. I am
+				passionate about hardware and software engineering, particularly embedded systems,
+				networking, cloud-native, and the web. Find me on <a
 					href="https://github.com/roopeshsn"
 					class="text-blue-900 underline"
 					target="_blank"
