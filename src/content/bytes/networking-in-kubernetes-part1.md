@@ -6,6 +6,7 @@ category: kubernetes
 summary: A short write-up on service types, ingress resources, and gateway API
 tags: kubernetes
 author: Roopesh Saravanan
+image: none
 ---
 
 Not only Kubernetes, but any workload that needs to be accessible from the external world, networking is crucial. In this first part of our series of bytes, we are going to look at ways of exposing a workload for external access in Kubernetes.

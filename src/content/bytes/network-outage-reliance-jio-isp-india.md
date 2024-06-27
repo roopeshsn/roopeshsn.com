@@ -6,6 +6,7 @@ category: networking
 summary: A short write-up on the recent network outage at Reliance Jio
 tags: networking
 author: Roopesh Saravanan
+image: images/network-outage-jio/jio-bgp-data.png
 ---
 
 Last week, on June 18, 2024, there was a network outage on Reliance Jio ISP. People who work from home rely heavily on uninterrupted internet service for business operations and are likely to be the most affected by this disruption.

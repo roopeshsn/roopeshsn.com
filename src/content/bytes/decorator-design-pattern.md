@@ -6,6 +6,7 @@ category: python
 summary: A deep dive into the decorator design pattern
 tags: decorator design pattern, design patterns, python
 author: Roopesh Saravanan
+image: none
 ---
 
 Why the name Decorator? What's the need to use a decorator design pattern? Let's find out in this byte.

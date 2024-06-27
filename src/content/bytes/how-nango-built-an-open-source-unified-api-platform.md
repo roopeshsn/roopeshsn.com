@@ -6,6 +6,7 @@ category: API
 summary: Why there's a need for a unified API platform?
 tags: Nango, API, Open Source, OSS
 author: Roopesh Saravanan
+image: none
 ---
 
 Let's find out what a unified API platform is and how Nango built one in this byte!

@@ -6,6 +6,7 @@ category: rust
 summary: Why Smart Pointers and what they do?
 tags: smart pointers in rust, smart pointers, rust, state design pattern
 author: Roopesh Saravanan
+image: none
 ---
 
 Think of smart pointers as a data structure. In the case of `Box`, the pointer variable will hold the reference to the object on the heap. The value can be accessed by referencing the variable with the `*` operator.
@@ -48,6 +49,7 @@ trait VendingMachineState {
 ```
 
 Also, the flow would be like this:
+
 - Person A inserts a coin
 - Select what he or she wants
 - And the machine will dispense the selected item
@@ -103,8 +105,7 @@ fn main() {
 }
 ```
 
-As you see, we intialize `vending_machine` and call the `insert` method. So that means I am going to define the `insert` method in the `VendingMachine` struct so that it will call the `insert` method on the state object (`IdleState`). 
-
+As you see, we intialize `vending_machine` and call the `insert` method. So that means I am going to define the `insert` method in the `VendingMachine` struct so that it will call the `insert` method on the state object (`IdleState`).
 
 ```
 impl VendingMachine {
@@ -140,6 +141,7 @@ impl VendingMachineState for IdleState {
 ```
 
 The changes in the above code are:
+
 - Changed the insert method to accept `vending_machine` of type `VendingMachine` as an argument (so that we can call set_state)
 - I called set_state by passing IdleState to it. But ideally, we need to pass the next state, which is `HasCoinState`. Though we didn't defined `HasCoinState`, I am passing `IdleState` for now
 
@@ -194,8 +196,8 @@ If you try to run the code, it will throw a bunch of errors. This is the time to
 
 Along with the `dyn` keyword error, you'll face another error stating that the `state` doesn't have a size known at compile time. Firstly, we'll fix both of these errors.
 
-
 ## Smart Pointers
+
 ### Box
 
 The size of a trait object is not known at compile time. The dyn keyword is used to indicate [dynamic dispatch](https://doc.rust-lang.org/std/keyword.dyn.html#:~:text=The%20dyn%20keyword%20is%20used,the%20type%20has%20been%20erased.) when working with trait objects. Box provides a heap-allocated, fixed-size pointer to the trait object. This is particularly useful when dealing with trait objects.
@@ -383,7 +385,3 @@ fn main() {
 Here's the [link](https://www.reddit.com/r/rust/comments/17undg3/comment/kbgko4y/?utm_source=share&utm_medium=web2x&context=3) to the reddit thread for the explanation.
 
 Alright, here's the [permalink](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=15823ea1035cfa08c89a05a00ec95b1d) to the complete code in case you need to try it out.
-
-
-
- 

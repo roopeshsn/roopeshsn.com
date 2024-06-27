@@ -3,6 +3,8 @@
 	let base = 'https://roopeshsn.com/bytes';
 	export let data;
 	export let url = `${base}/${$page.params.slug}`;
+
+	let imagePath = data.image === 'none' ? '' : `/${data.image}`;
 </script>
 
 <svelte:head>
@@ -16,7 +18,7 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content={data.title} />
 	<meta property="og:description" content={data.summary} />
-	<meta property="og:image" content="" />
+	<meta property="og:image" content={imagePath} />
 
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
@@ -24,7 +26,7 @@
 	<meta property="twitter:url" content={url} />
 	<meta name="twitter:title" content={data.title} />
 	<meta name="twitter:description" content={data.summary} />
-	<meta name="twitter:image" content="" />
+	<meta name="twitter:image" content={imagePath} />
 </svelte:head>
 
 <article class="prose w-full max-w-full mt-8 prose-headings:font-medium">

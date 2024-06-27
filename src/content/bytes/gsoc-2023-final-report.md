@@ -6,6 +6,7 @@ category: GSoC
 summary: The work I've done during the GSoC coding period
 tags: GSoC, IHR, Google Summer of Code, Internet Health Report
 author: Roopesh Saravanan
+image: none
 ---
 
 I worked on a project titled [Search Pages for Internet Yellow Pages](https://summerofcode.withgoogle.com/programs/2023/projects/jmLW9PFH) with the Internet Health Report (IHR) organization.

@@ -6,6 +6,7 @@ category: python
 summary: What's the need for decorators in Python?
 tags: decorators, python, decorators in python
 author: Roopesh Saravanan
+image: none
 ---
 
 Why the name Decorator? What's the need to decorate Python code? Let's find out in this byte.

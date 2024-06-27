@@ -1,6 +1,6 @@
 export async function load({ params }: { params: { slug: string } }) {
 	const post = await import(`../../../content/bytes/${params.slug}.md`);
-	const { title, createdAt, updatedAt, summary, tags, author } = post.metadata;
+	const { title, createdAt, updatedAt, summary, tags, author, image } = post.metadata;
 	let formattedTags = tags.split(',').map((tag: string) => tag.trim());
 	const content = post.default;
 
@@ -11,6 +11,7 @@ export async function load({ params }: { params: { slug: string } }) {
 		summary,
 		tags: formattedTags,
 		author,
+		image,
 		content
 	};
 }

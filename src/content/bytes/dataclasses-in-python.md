@@ -6,6 +6,7 @@ category: python
 summary: What's the need for Dataclasses in Python?
 tags: dataclasses, python, dataclasses in python
 author: Roopesh Saravanan
+image: none
 ---
 
 Dataclasses are a kind of data structure using classes (classes that hold data). Let's see how to use dataclasses in this byte!
