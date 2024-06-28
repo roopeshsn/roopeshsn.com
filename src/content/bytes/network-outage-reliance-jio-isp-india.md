@@ -1,7 +1,7 @@
 ---
-title: Network Outage at Reliance Jio ISP on June 18, 2024
+title: Network Outage on Reliance Jio ISP on June 18, 2024
 createdAt: 2024-06-27
-updatedAt: 2024-06-27
+updatedAt: 2024-06-28
 category: networking
 summary: A short write-up on the recent network outage at Reliance Jio
 tags: networking
