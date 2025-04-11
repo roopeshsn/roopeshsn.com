@@ -2,6 +2,12 @@
 
 My (roopeshsn) [portfolio + blog (bytes)](https://roopeshsn.com) page. Built with Sveltekit.
 
+## Getting Started
+
+```
+npm run dev
+```
+
 ## Credit
 
 1. [Let's learn SvelteKit by building a static Markdown blog from scratch](https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog)
