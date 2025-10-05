@@ -46,9 +46,13 @@
 		<h1 class="text-xl md:text-2xl">Welcome to one of my leased spaces on the Internet!</h1>
 		<div class="mt-4">
 			<p>
-				Hi! My name is Roopesh Saravanan. I work as a network consulting engineer at Cisco. I am
-				passionate about hardware and software engineering, particularly embedded systems,
-				networking, cloud-native, and the web. Find me on <a
+				Hi! My full name is Roopesh Saravanan. Saravanan is my father's name. As I grow up, many of the education and government documentations require filling in a last name, which I don't have. So I included my father's name as my last name.  
+
+				I am from Tamil Nadu, and most of them here do the same thing because the previous-to-previous generation had a thought that the caste system can be abolished by not including it as their surname. It's been more than 60 years, but still caste-related violence and honor killing are still practiced. 
+				
+				Coming back to my bio, I fix networks for a living. I work in TAC at Arista Networks. Previously I worked at Cisco in Professional Services. I am a software hobbyist. I write code in my free time.
+
+				Find me on <a
 					href="https://github.com/roopeshsn"
 					class="text-blue-900 underline"
 					target="_blank"
