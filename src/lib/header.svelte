@@ -3,6 +3,7 @@
 	<div class="flex justify-between">
 		<div class="mr-4"><a href="/">home</a></div>
 		<div class="mr-4"><a href="/bytes">bytes</a></div>
+		<div class="mr-4"><a href="/notes">notes</a></div>
 		<div class="mr-4"><a href="/talks">talks</a></div>
 		<div><a href="/resume">resume</a></div>
 	</div>
