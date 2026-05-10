@@ -1,54 +1,58 @@
 ---
-title: The BGP and Wireguard Experiment
+title: The BGP and WireGuard Experiment
 createdAt: 2025-09-20
-updatedAt: 2025-00-20
+updatedAt: 2026-05-10
 category: bgp, wireguard
-summary: This byte discusses about BGP and Wireguard.
+summary: This byte discusses about BGP and WireGuard.
 tags: bgp, wireguard
 author: Roopesh Saravanan
 image: none
 ---
 
-It's a random thought, how I can peer my laptop with my friend's laptop using BGP where both the machines are behind CG-NAT. My broadband connection is from Airtel and I am not sure what my friend's is using - never mind. 
+It's a random thought: how can I create a BGP peering between my laptop and my friend's laptop where both the machines are behind CG-NAT? My broadband connection is from Airtel, and I am not sure what my friend's is using—never mind. 
 
-In CG-NAT the public IP address for example 223.123.12.23 will be shared by multiple broadband users. Inbound connections will fail unless there is a outbound connection created already for the same port number. For example say there are two parties A and B trying to establish a TCP communication, assuming X and Y are their ip addresses which is shared. A initiated the communication to B's ip address Y with port number 1234. Now when the SYN packet reaches it's CG-NAT router, it creates a mapping destination's ISP CG-NAT's router, it needs to have a mapping of Y:1234 to reach B. To have this mapping B should a  
+In CG-NAT, a public IP address like 223.123.12.23 is shared by many broadband users. Because of this, unsolicited inbound connections usually fail unless the CG-NAT device already has a mapping for that connection.
 
-<!-- Explain CG-NAT with NAT Table mapping -->
+For example, assume two users, A and B, want to communicate, and their shared public IPs are X and Y. A sends a TCP SYN packet to Y:1234. When the packet reaches B’s ISP CG-NAT router, the router does not know which customer behind Y should receive the packet, because many users share the same public IP.
 
-Secondly our machines linux/macos won't have BGP process by default. We can run the BGP daemon on our machines. Some of the popular ones that comes with BGP daemon are FRRouting, BIRD and others. I ran FRRouting on top of a VM (created using Multipass) on my Mac. This is sorted.
+To make this work, B must first create an outbound connection (or send some traffic) using port 1234. This causes B’s CG-NAT router to create a temporary mapping for Y:1234 to B’s internal private IP and port. Once this mapping exists, packets arriving for Y:1234 can be forwarded correctly to B.
 
-In the BGP daemon configuration we need two configurations for the neighborship to form,
+This is why peer-to-peer communication behind CG-NAT is tricky and often requires techniques like hole punching, keepalives, or relay servers. 
+
+Coming to the next part, our machines, Linux/macOS, won't have a BGP process by default. We can run the BGP daemon on our machines. Some of the popular ones that come with the BGP daemon are FRRouting, BIRD, and others. I ran FRRouting on top of a VM (created using Multipass) on my Mac. This is sorted.
+
+In the BGP daemon configuration we need two configurations for the neighborship to form.
 - Neighbor IP address with ASN
-- Changing the default TTL which is 1, so that the packet can be forwarded on the Internet routers
+- Changing the default TTL, which is 1, so that the packet can be forwarded on the Internet routers
 
-As said before one peer should communicate the CG-NAT port number to the other peer inorder the neighborship to be successful. To mitigate this we are forming VPN tunnels from the clients to the cloud VPS using Wireguard. 
+As said before, one peer should communicate the CG-NAT port number to the other peer in order for the neighborship to be successful. To mitigate this, we are forming VPN tunnels from the clients to the cloud VPS using WireGuard.
 
 <!-- Answer the questions:
 1. The problem of CG-NAT. Answered
 2. Why we need cloud VPS? Answered
 3. Why we need Wireguard Tunnels? Linked with question 1. -->
 
-As I work as a network engineer. I used to think and compare Wireguard with VXLAN. Wireguard and VXLAN are known as overlay encapsulation protocols, where the original frame will be encapsulated with another frame. The intermediate routers can only see the outer frame not the inner frame. The tunnel endpoints (VTEPs in VXLAN terminoogy) can decapsulate the inner frame and bridge/route it.
+I used to think about and compare WireGuard with VXLAN. Wireguard and VXLAN are known as overlay encapsulation protocols, where the original frame will be encapsulated with another frame. The intermediate routers can only see the outer frame, not the inner frame. The tunnel endpoints (VTEPs in VXLAN terminology) can decapsulate the inner frame and bridge/route it.
 
 ## Setup
 
 Setup in a nutshell
 1. Setting up a cloud VPS
-2. Setting up Wireguard on the Cients and cloud VPS
+2. Setting up WireGuard on the clients and cloud VPS
 3. Setting up FRRouting on Clients
 
 ### Cloud VPS
 
-We can spin up a VPS with minimum available resouces on any cloud VPS provider. There are good reviews on Linode and Vultr. I am using Linode for setting up a VPS. On Linode we can use the "Nanode 1 GB" plan from the "Shared CPU" category. Below are the summary of the resources that comes with the Nanode plan.
+We can spin up a VPS with minimum available resources on any cloud VPS provider. There are good reviews on Linode and Vultr. I am using Linode for setting up a VPS. On Linode we can use the "Nanode 1 GB" plan from the "Shared CPU" category. Below is the summary of the resources that come with the Nanode plan.
 
 ```
 Plan	Monthly	Hourly	RAM	CPUs	Storage	Transfer	Network In / Out
 Nanode 1 GB	Nanode 1 GB  	$5	$0.0075	1 GB	1	25 GB	1 TB	40 Gbps / 1 Gbps
 ```
 
-## Setting up Wireguard on the Clients and the VPS
+## Setting up WireGuard on the Clients and the VPS
 
-1. Create public and private key
+1. Create a public and private key.
 
 ```
 wg genkey | tee privatekey | wg pubkey > publickey
@@ -67,7 +71,7 @@ PublicKey = LlKC4xwOJHlOetI7BLL+O4PUyEpYUHcFJA74RMzQpU8=
 AllowedIPs = 10.0.0.1/32
 ```
 
-In `AllowedIPs` field, we need to give the peer's tunnel interface address. If you are setting up in clients, the peer is the vps and vice versa. As other fields are self explanatory I leave them to you.
+In `AllowedIPs` field, we need to give the peer's tunnel interface address. If you are setting up in clients, the peer is the vps and vice versa. As other fields are self explanatory, I leave them to you.
 
 To bring the tunnel interfaces up we can use the wg-quick utility tool. Refer the below commands,
 
@@ -78,7 +82,7 @@ sudo wg-quick up wg0
 
 Confirm the status of the tunnel interfaces using the command `wg` or `sudo wg`
 
-We can also run the command `` to see the egress interface and next hop IP address.
+<!-- We can also run the command `` to see the egress interface and next hop IP address. -->
 
 ## Setting up FRRouting
 
